@@ -1,0 +1,17 @@
+.container square {
+    height: 28px;
+    width: 28px;
+    border: solid 1px black;
+}
+
+ .container row {
+    height: 30px;
+    display: flex;
+    gap: 3px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
