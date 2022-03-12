@@ -7,20 +7,15 @@ function createSquares(row) {
     }
 }
 
-function getColor(colors, index) {
-    let color = colors[index];
-    index += 1;
-    if (index > 6) {
-        index = 0;
-    }
+function askNumberOfSquares() {
+    do {
+        numberOfSquares = prompt("Enter the number of squares per row that you want: ");
+        if (numberOfSquares > 100 || numberOfSquares < 0) {
+            alert("The number must be between 0 and 100");
+        };
+    } while(numberOfSquares > 100 || numberOfSquares < 0);
+    
 
-    return color;
-}
-
-function changeBackgroundColor(event) {
-    let colors = ['violet', 'blue', 'lightskyblue', 'greenyellow', 'yellow', 'orange', 'red'];
-    let index = 0;
-    event.target.style.backgroundColor = getColor(colors, index);
 }
 
 for (let n = 0; n < 16; n++) {
@@ -28,25 +23,18 @@ for (let n = 0; n < 16; n++) {
     container.appendChild(document.createElement('row'));
 }
 
-
 const rows = document.querySelectorAll('row');
-
 rows.forEach(createSquares);
 
 const squares = document.querySelectorAll('square')
-
 squares.forEach((square) => {
     square.addEventListener('mouseenter', function(event) {
-        event.target.style.background = 'yellow';
+        event.target.style.backgroundColor = 'yellow';
     })
 })
 
-/*for (let n = 0; n < 16; n++) {
-    square = document.querySelector('square');
-    square.addEventListener('mouseenter', function (event) {
-    event.target.style.backgroundColor = 'yellow';
-    });
-}*/
+const clear = document.querySelector('.clear');
+clear.addEventListener('click', askNumberOfSquares)
 
 
 
