@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+let numberOfSquares = 16;
 
 function createSquares(row) {
     for (let n = 0; n < 16; n++) {
@@ -15,10 +16,9 @@ function askNumberOfSquares() {
         };
     } while(numberOfSquares > 100 || numberOfSquares < 0);
     
-
 }
 
-for (let n = 0; n < 16; n++) {
+for (let n = 0; n < numberOfSquares; n++) {
     let row = document.createElement('div');
     container.appendChild(document.createElement('row'));
 }
@@ -33,8 +33,9 @@ squares.forEach((square) => {
     })
 })
 
-const clear = document.querySelector('.clear');
-clear.addEventListener('click', askNumberOfSquares)
+const clearButton = document.querySelector('.clearButton');
+clearButton.addEventListener('click', askNumberOfSquares);
+
 
 
 
