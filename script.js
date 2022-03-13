@@ -14,7 +14,7 @@ function removeAllChildNodes(parent) {
     };
 };
 
-function askNumberOfSquares() {
+function createNewGrid() {
 
     removeAllChildNodes(container);
 
@@ -56,7 +56,7 @@ squares.forEach((square) => {
 })
 
 const clearButton = document.querySelector('.clearButton');
-clearButton.addEventListener('click', askNumberOfSquares);
+clearButton.addEventListener('click', createNewGrid);
 
 
 
